@@ -1,0 +1,72 @@
+/* .table th[scope = col]{
+    background-color: rgb(39, 39, 39);
+
+}
+
+tr:nth-child(odd){
+    background-color: #3b3b3b;
+}
+
+tr:nth-child(even){
+    background-color: rgb(39, 39, 39);
+} */
+
+table{
+    border-radius: 10px;
+    border-bottom-left-radius: 10px !important;
+}
+
+
+.lt {
+    border-top-left-radius: 10px !important;
+  }
+
+
+.rt {
+    border-top-right-radius: 10px !important;
+  }
+
+
+/* tr:last-child td:last-child{
+    border-bottom-right-radius: 10px !important;
+}
+
+
+tr:last-child td:first-child{
+    border-bottom-left-radius: 10px !important;
+} */
+
+td{
+    border: 0;
+    cursor: pointer;
+}
+
+th{
+    border: 0;
+}
+
+th:nth-child(1){
+    width: 15%;
+}
+
+th:nth-child(2){
+    width: 10%;
+}
+
+th:nth-child(3){
+    width: 50%;
+}
+
+th:nth-child(4){
+    width: 10%;
+}
+
+th:nth-child(5){
+    width: 20%;
+}
+
+@media only screen and (max-width: 600px){
+    .container{
+        width: 100% !important;
+    }
+}

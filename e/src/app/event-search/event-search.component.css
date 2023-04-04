@@ -1,0 +1,19 @@
+.container{
+    /* border:0.5px solid grey; */
+    border-radius:0.5em;  
+    height: auto;
+    width: 50%;
+    margin-top: 2%;
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(9px); 
+}
+
+@media only screen and (max-width: 600px) {
+    .container{
+        width: 90% !important;
+    }
+
+    option{
+        width: 10% !important;
+    }
+  }

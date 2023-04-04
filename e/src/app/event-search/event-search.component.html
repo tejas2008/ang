@@ -1,0 +1,74 @@
+
+<div class="container" style="width: 40%;">
+    <div class="row">
+        <div class="col-sm-12" style="margin-top: 35px;">
+            <h2 class="text-center text-white" style="color: white">Events Search</h2>
+            
+        </div >
+        <div class="col-sm-12 mt-3 mb-4">
+        <div  style="background-color: white; height: 1px;">
+          <!-- <hr id="line" style="background-color: white !important; height: 2px;" > -->
+        </div>
+      </div>
+        
+    </div>
+    <form #userlogin = "ngForm" (ngSubmit) = "onClickSubmit(userlogin.value)" onsubmit="return false" ngNativeValidate>
+
+          <div class="form-group text-white" id="kw">
+            <label class="form-label" style="color: aqua;">Keyword<span style="color:#f37070">*</span></label>
+            <!-- <input style="height: 75%" type="text" matInput name="keyword" #keyword  id="key-inp" class="form-control" class="col-sm-12" ngModel required > -->
+
+            <input type="text" [matAutocomplete] = "auto" matInput ngModel #keyword id="key-inp" [formControl]="searchkeyword" name ="keyword" autocomplete="new-password" class="form-control" class="col-md-12" required>
+            
+            <mat-autocomplete [panelWidth]="400" #auto="matAutocomplete" (optionSelected)="onSelected()" [displayWith]="displayWith">
+              <mat-option *ngIf="isLoading" class="is-loading">Loading...</mat-option>
+              <ng-container *ngIf="!isLoading">
+                <mat-option *ngFor="let keyword of filteredOptions" [value]="keyword">
+                  {{keyword.name}}
+                </mat-option>
+              </ng-container>
+            </mat-autocomplete>
+          </div>
+        <div class="row">
+          <div class="form-group col-md-6" id="dist" >
+            <label style="color: aqua;"  class="form-label">Distance</label>
+            <input type="number" matInput name="distance" class="form-control" id="dist-input" #distance value ="10" placeholder="10" ngModel >
+          </div>
+          <div class="form-group col-md-6" id="cat">
+            <label style="color: aqua;"  class="form-label">Category<span style="color:#f37070">*</span></label>
+            <select id="inputState" name="category" class="form-select" #category ngModel style="width: 90%; height: 55%;">
+              <option value="default">Default</option>
+              <option value="Music">Music</option>
+              <option value="Sports">Sports</option>
+              <option value="Arts">Arts & Theatre</option>
+              <option value="Film">Film</option>
+              <option value="Miscellaneous">Miscellaneous</option>
+            </select>
+          </div>
+        </div>
+          <div *ngIf = "loc_status" class="form-group " style="margin-bottom: 0;">
+            <label style="color: aqua;"  class="form-label">Location<span style="color:#f37070; margin-bottom: 0;" >*</span></label>
+            <input type="text" id="loc" class="form-control" name="location" #location ngModel required> 
+        </div>
+        <div class="row">
+          <div class="col-12 mt-3" id="check" style="color: aqua;">
+            <input type="checkbox" id="auto_check"  style="color: aqua;" (click)="EnableDisable()" /> Auto-detect my location
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center mt-4"  id="buttons">
+            <input type="submit" id="submit" class="btn btn-danger" value="SUBMIT" style="margin-bottom: 50px; margin-right: 20px;"/>        
+            <input type="reset" id="clear" class="btn btn-primary" value="CLEAR" style="margin-bottom: 50px" (click)="clear()"/>
+          </div>
+        </div>
+      </form>
+      
+ </div>
+
+<div *ngIf="results.length">
+  <app-event-table [data] = 'results'></app-event-table>
+</div>
+
+<div *ngIf="record" class="container" style="padding: 0;  width: 70%; margin-top: 5%;">
+  <p style="background-color: white; color: red; border-radius: 1.5 em;" class="text-center">No Results available</p>
+</div>

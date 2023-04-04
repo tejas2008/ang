@@ -1,0 +1,17 @@
+<nav *ngIf = "search" nav class="navbar bg-transparent " >
+  <div class="container text-white" style="margin-right: 0; padding: 0; justify-content: flex-end;">
+    <ul class="navbar-nav text-white" style="flex-direction: row;">
+      <li class="nav-item text-white"><button routerLink="/search" class="btn text-white border-white" routerLinkActive="active" ariaCurrentWhenActive="page">Search</button></li>
+      <li class="nav-item text-white"><button routerLink="/favourites"class="btn text-white" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="toggle()">Favourites</button></li>
+    </ul>
+  </div>
+</nav>
+<nav *ngIf = "!search" nav class="navbar bg-transparent " >
+  <div class="container text-white" style="margin-right: 0; padding: 0; justify-content: flex-end;">
+    <ul class="navbar-nav text-white" style="flex-direction: row;">
+      <li class="nav-item text-white"><button routerLink="/search" class="btn text-white " routerLinkActive="active" ariaCurrentWhenActive="page" (click)="toggle()">Search</button></li>
+      <li class="nav-item text-white"><button routerLink="/favourites"class="btn text-white border-white" routerLinkActive="active" ariaCurrentWhenActive="page">Favourites</button></li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>

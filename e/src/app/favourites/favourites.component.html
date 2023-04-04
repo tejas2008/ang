@@ -1,0 +1,35 @@
+<div class="container" *ngIf="!table" style="margin-top: 50px">
+    <div class="alert alert-secondary text-center text-danger align-items-center" role="alert" style="border-radius: 0.5rem; height: fit-content !important; margin: 0 auto;">
+      <strong>No favorite events to show</strong>
+    </div>
+  </div>
+  
+  <div class="container" *ngIf="table" style="margin-top:50px">
+    <div class="text-center label">
+      <p> List of your favorite events</p>
+    </div>
+    <table class="table table-light table-hover text-center">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th style="width: 15%;">Date</th>
+          <th>Event</th>
+          <th>Category</th>
+          <th>Venue</th>
+          <th>Favorite</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let event of results; let index = index">
+          <td>
+            {{index+1}}
+          </td>
+          <td>{{event.date}}</td>
+          <td>{{event.name}}</td>
+          <td>{{event.ganre}}</td>
+          <td>{{event.venue}}</td>
+          <td><button style="border: 0px; background-color: transparent;" (click)="deleteEvent(event.name)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

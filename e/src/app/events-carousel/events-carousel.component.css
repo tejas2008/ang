@@ -1,0 +1,119 @@
+.main{
+    padding: 0;
+    height: auto;
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(9px); 
+    color: white;
+}
+
+::ng-deep .mdc-tab__text-label {
+    color: white !important;
+}
+
+::ng-deep  .mat-mdc-tab-labels{
+    background-color: rgb(59, 153, 122);
+
+}
+
+/* .mat-mdc-label-active {
+    background-color: #000;
+    color: #fff;
+    opacity: 1;
+} */
+
+::ng-deep .mat-mdc-tab-header{
+    width: 100%;
+    color: white;
+}
+
+::ng-deep .mat-mdc-tab-label-content{
+    color: white;
+    overflow: hidden !important;
+}
+
+.mat-mdc-tab-body-content{
+    overflow: hidden !important;
+    width: 100%;
+}
+
+:ng-deep .mat-mdc-tab-body-content{
+    width: 100%;
+    overflow: hidden !important;
+}
+
+.headings{
+    margin-bottom: 0;
+    color: aquamarine;
+}
+
+
+.open-close {
+    font-size: 16px;
+    line-height: 16px;
+    height: 32px;
+    overflow: hidden;
+  }
+  
+  .show {
+    overflow: visible;
+    height: auto;
+  }
+
+  .modal-backdrop {
+    /* bug fix - no overlay */    
+    display: none;    
+}
+
+.modal-body{
+    width: 100%;
+    height: 500px
+}
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  /* border-radius: 50%; */
+  /* border: 1px solid black; */
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 50px;
+  color: black;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 50px;
+  color: black;
+}
+
+
+.cntxt{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@media only screen and (max-width: 600px) {
+    .im1{
+        margin-bottom: 10%;
+    }
+    
+    .ot{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 5% !important;
+        margin-block-end: 5% !important;
+    }
+
+
+}
